@@ -3,8 +3,15 @@ import PointerMeter from './PointerMeter';
 
 class GeckoMeter extends React.Component {
   render() {
-    const range = this.props.max - this.props.min;
-    const correctedStartValue = this.props.value - this.props.min;
+    const min = Math.min(this.props.min, this.props.max);
+    const max = Math.max(this.props.min, this.props.max);
+
+    if (this.props.min > this.props.max) {
+      console.warn('Min is more than max, but they\'ve been swapped around for the purpose of this demo.');
+    }
+
+    const range = max - min;
+    const correctedStartValue = this.props.value - min;
     const percentage = correctedStartValue / range;
 
     return (
