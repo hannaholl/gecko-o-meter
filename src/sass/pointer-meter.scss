@@ -1,7 +1,7 @@
 $pointer-meter-width: 300px;
 
 .pointer-meter {
-	//height: 150px;
+	height: 165px;
 	position: relative;
 	width: $pointer-meter-width;
 }
@@ -9,7 +9,9 @@ $pointer-meter-width: 300px;
 .pointer-meter__bg {
 	background: #FF8332;
 	border-radius: ($pointer-meter-width / 2) ($pointer-meter-width / 2) 0 0;
+	bottom: 0;
 	height: $pointer-meter-width / 2;
+	position: absolute;
 	width: 100%;
 }
 
@@ -23,4 +25,16 @@ $pointer-meter-width: 300px;
 
 	transform-origin: center bottom;
 	transform: rotate(30deg);
+}
+
+.pointer-meter__bg:after {
+	background: #B3F0F3;
+	border-radius: 50%;
+	bottom: -10px;
+	content: "";
+	height: 20px;
+	left: 50%;
+	position: absolute;
+	width: 20px;
+	transform: translateX(-50%);
 }
