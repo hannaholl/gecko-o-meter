@@ -7,7 +7,8 @@ class DemoContainer extends React.Component {
     super();
 
     this.state = {
-      data: {},
+      data: null,
+      error: '',
     };
   }
   componentDidMount() {
@@ -18,13 +19,16 @@ class DemoContainer extends React.Component {
       })
       .catch(() => {
         // Show error
+        this.setState({ error: 'There was an error loading the data. Please try again.' });
       });
   }
 
   render() {
+    // Check if there is an error in the state, if so show the error message.
+    // Otherwise render the GeckoMeter if the data has been retrieved, or show a loading message.
     return (
       <div className="meter-container">
-        <GeckoMeter {...this.state.data} />
+        {this.state.error ? this.state.error : this.state.data ? <GeckoMeter {...this.state.data} /> : 'Loading data...'}
       </div>
     );
   }
