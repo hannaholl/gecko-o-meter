@@ -27,12 +27,8 @@ class PointerMeter extends React.Component {
   }
 }
 
-PointerMeter.defaultProps = {
-  percentage: 0.5,
-};
-
 PointerMeter.propTypes = {
-  percentage: React.PropTypes.number,
+  percentage: React.PropTypes.number.isRequired,
 };
 
 export default PointerMeter;

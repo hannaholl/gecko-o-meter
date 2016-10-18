@@ -11,8 +11,9 @@ class DemoContainer extends React.Component {
     };
   }
   componentDidMount() {
-    Network.getData()
+    Network.getRandomData()
       .then(data => {
+        console.log(data);
         this.setState({ data });
       })
       .catch(() => {
@@ -23,7 +24,7 @@ class DemoContainer extends React.Component {
   render() {
     return (
       <div className="meter-container">
-        <GeckoMeter />
+        <GeckoMeter {...this.state.data} />
       </div>
     );
   }
