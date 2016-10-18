@@ -2,7 +2,7 @@ import React from 'react';
 import Network from '../helpers/Network';
 import GeckoMeter from './GeckoMeter';
 
-class DemoContainer extends React.Component {
+class MeterContainer extends React.Component {
   constructor() {
     super();
 
@@ -33,4 +33,4 @@ class DemoContainer extends React.Component {
   }
 }
 
-export default DemoContainer;
+export default MeterContainer;
