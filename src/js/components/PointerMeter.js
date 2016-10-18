@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../sass/pointer-meter.scss';
+import '../../sass/pointer-meter.scss';
 
 class PointerMeter extends React.Component {
   constructor() {

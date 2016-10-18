@@ -2,9 +2,9 @@ const webpack = require('webpack');
 const path = require('path');
 
 const PATHS = {
-  app: './src/index.js',
+  app: './src/js/index.js',
   html: './src/index.html',
-  css: /src/,
+  css: /src\/sass/,
   dist: path.join(__dirname, 'dist'),
 };
 
