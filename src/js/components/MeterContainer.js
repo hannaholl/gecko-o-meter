@@ -14,11 +14,10 @@ class DemoContainer extends React.Component {
   componentDidMount() {
     Network.getRandomData()
       .then(data => {
-        console.log(data);
+        console.log('data', data);
         this.setState({ data });
       })
       .catch(() => {
-        // Show error
         this.setState({ error: 'There was an error loading the data. Please try again.' });
       });
   }
