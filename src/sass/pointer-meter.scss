@@ -1,0 +1,26 @@
+$pointer-meter-width: 300px;
+
+.pointer-meter {
+	//height: 150px;
+	position: relative;
+	width: $pointer-meter-width;
+}
+
+.pointer-meter__bg {
+	background: #FF8332;
+	border-radius: ($pointer-meter-width / 2) ($pointer-meter-width / 2) 0 0;
+	height: $pointer-meter-width / 2;
+	width: 100%;
+}
+
+.pointer-meter__pointer {
+	background: #B3F0F3;
+	height: 100%;
+	left: calc(50% - 3px);
+	position: absolute;
+	bottom: 0;
+	width: 6px;
+
+	transform-origin: center bottom;
+	transform: rotate(30deg);
+}

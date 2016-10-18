@@ -1,5 +1,6 @@
 import React from 'react';
 import Network from '../helpers/Network';
+import GeckoMeter from './GeckoMeter';
 
 class DemoContainer extends React.Component {
   constructor() {
@@ -22,7 +23,7 @@ class DemoContainer extends React.Component {
   render() {
     return (
       <div className="meter-container">
-
+        <GeckoMeter />
       </div>
     );
   }
