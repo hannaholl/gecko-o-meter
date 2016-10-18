@@ -1,0 +1,24 @@
+.gecko-meter {
+	padding: 40px 0;
+	position: relative;
+}
+
+.gecko-meter__unit {
+	position: absolute;
+
+	&--min {
+		left: 0;
+		bottom: 0;
+	}
+
+	&--max {
+		bottom: 0;
+		right: 0;
+	}
+
+	&--value{
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+	}
+}
