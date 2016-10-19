@@ -1,9 +1,11 @@
 # gecko-o-meter
 
+This consists of a `GeckoMeter` React component that renders a pointer meter (is this what they're called??) and a container component that fetches data from `https://widgister.herokuapp.com/challenge/frontend` and passes it down to the meter component.
+
 ## Requirements
 [Node / npm](https://nodejs.org/en/)
 
-## Setup
+## Get started
 #### 1. Clone the repo
 `git clone git@github.com:hannaholl/gecko-o-meter.git`
 
@@ -17,6 +19,31 @@ Run `npm start` to start the webpack dev server. This will run the app on your [
 ## Build
 To create a build, run `npm run build`. This will bundle the app with webpack and copy the `index.html` and `bundle.js` files
 into a new `dist` folder. The `dist` folder should contain all files needed to run the app.
+
+## Usage
+
+### Components
+
+#### MeterContainer
+This container component is responsible for fetching data and passing it down to the presentational components. It also shows a loading message while getting the data and an error message if something went wrong.
+
+#### GeckoMeter
+The `GeckoMeter` component renders the min, max and current values and calculates the percentage between them to display in the `PointerMeter`.
+##### Props
+| Name | Type | Description |
+| --- | --- | --- |
+| min | Number | The minimum value to display |
+| max | Number | The maximum value to display |
+| value | Number | The maximum current value |
+| format | String | The format of the values, currently only `currency` is supported |
+| unit | String | The unit for the values. |
+
+#### PointerMeter
+The `PointerMeter` component takes a percentage and displays a meter with the pointer pointing to the percentage passed in.
+##### Props
+| Name | Type | Description |
+| --- | --- | --- |
+| percentage | Number | A number between 0-1 |
 
 ## Next steps
 
