@@ -28,15 +28,15 @@ into a new `dist` folder. The `dist` folder should contain all files needed to r
 This container component is responsible for fetching data and passing it down to the presentational components. It also shows a loading message while getting the data and an error message if something went wrong.
 
 #### GeckoMeter
-The `GeckoMeter` component renders the min, max and current values and calculates the percentage between them to display in the `PointerMeter`.
+The `GeckoMeter` component renders the min, max and current values in `Unit` components and calculates the percentage between them to display in the `PointerMeter`.
 ##### Props
 | Name | Type | Description |
 | --- | --- | --- |
 | min | Number | The minimum value to display |
 | max | Number | The maximum value to display |
-| value | Number | The maximum current value |
+| value | Number | The current value |
 | format | String | The format of the values, currently only `currency` is supported |
-| unit | String | The unit for the values. |
+| unit | String | The unit for the values |
 
 #### PointerMeter
 The `PointerMeter` component takes a percentage and displays a meter with the pointer pointing to the percentage passed in.
@@ -44,6 +44,15 @@ The `PointerMeter` component takes a percentage and displays a meter with the po
 | Name | Type | Description |
 | --- | --- | --- |
 | percentage | Number | A number between 0-1 |
+
+#### Unit
+This component renders a value along with an optional unit. If the format passed in equals `currency` and the `unit` is one of the supported currencies (currently GBP, USD and EUR) it will show the currency symbol before the value. Otherwise the `unit` will simply be displayed after the value. Both format and unit are optional and if they are not supplied the value will be displayed on it's own.
+##### Props
+| Name | Type | Description |
+| --- | --- | --- |
+| value | Number | The current value |
+| format | String | The format of the values, only `currency` is supported |
+| unit | String | The unit of the value |
 
 ## Next steps
 
